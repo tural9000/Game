@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"  />
+        <style>
+            body { display: flex; height: 100vh; margin: 0 }
+            input{cursor: pointer;}
+            #oyun { margin: auto; padding: 30px; text-align: center; width: 40%; min-height: 30vh; border-radius: 10px; box-shadow: 0 0 10px #AAA;}
+            #h1, #h2 {  font-family: Roboto; }
+            #cvb { display: table; margin: 10px auto; list-style: none; padding: 0; text-align: left; }
+            #btn{background: #418b5356; color: #125c44ad; font: bold 1em Helvetica; text-align: center; padding: 7px 10px; width: 110px; border: 2px solid #b6b6b6; border-radius: 4px; box-shadow: .5px .5px .8px #333; outline: 0; cursor: pointer;}
+        </style>  
+    </head>
+    <body>
+        <div id="oyun">
+            <h1 id="h1">TEST</h1>
+            <h2 id="h2">Testin adı</h2>
+            <ul id="cvb"></ul>
+            <button id="btn">Başla</button>
+        </div>
+
+        <script>
+            const h1 = document.getElementById("h1")
+            const h2 = document.getElementById("h2")
+            const btn = document.getElementById("btn")
+            const cvb = document.getElementById("cvb")
+            const ajax = new XMLHttpRequest();
+            let right =0,wrong =0,empty = 0;
+            let test;
+            let x = 0;
+            let y = 0;
+            let cavabarr = []
+            ajax.open("GET", "test.json")
+            ajax.send()
+            ajax.onload = function() {
+                test = JSON.parse(this.responseText) 
+                h2.innerHTML = test.name
+            }
+            btn.onclick = function(){
+                if(x>0) yaz()
+                if(x < test.quiz.length){
+                    h1.innerHTML = test.name + "<br />Sual: " + (x + 1)
+                    h2.innerHTML = test.quiz[x].q
+                    btn.innerHTML = 'Novbeti'
+                    cvb.innerHTML = test.quiz[x].a.reduce((kod, cavab) => kod + `<li><input id="n" name="cavab" type="radio" /> ${cavab}</li>`, ''); 
+                    x++
+                }else son(cavabarr);
+            }
+
+            function yaz(){
+                let input  = cvb.querySelectorAll('input[name=cavab]');
+                let cavab = "";
+                for(let i = 0; i<input.length; i++){
+                    if(input[i].checked) cavab = i;
+                }
+                cavabarr.push(cavab)
+            }
+
+            function son(cavab) {
+                for(let i = 0; i < cavab.length; i++){
+                    test.quiz[i].t===cavab[i] ? right++ : wrong++
+                    if(cavab[i]==="") {
+                        empty++ 
+                        wrong--
+                    }
+                    
+                }
+                console.log(cavab)
+                h1.innerHTML = test.name
+                h2.innerHTML = "Neticeler:"
+                btn.style.display = "none"
+                cvb.innerHTML = `
+                    <li>Doğru: ${right}</li>
+                    <li>Səhv: ${wrong} </li>
+                    <li>Boş: ${empty} </li>
+                    
+                `
+            }
+        </script>
+    </body>
+</html>

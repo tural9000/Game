@@ -1,0 +1,115 @@
+{
+    "name": "Maraqlı qarışıq suallar",
+    "quiz": [
+        {
+            "q": "Çempionlar liqasının kubokunu 5 dəfə qaldıran klub hansıdır?",
+            "a": [
+                "Liverpul",
+                "Milan",
+                "Barselona",
+                "Benfika",
+                "M. Yunayted"
+            ],
+            "t": 2
+        },
+        {
+            "q": "Hansı heyvanın qırılan sümüyü qaynamır?",
+            "a": [
+                "At",
+                "Dələ",
+                "Zürafə",
+                "Pişik",
+                "Meymun"
+            ],
+            "t": 0
+        },
+        {
+            "q": "İnsandan başqa digər hansı canlı zövq üçün cinsi əlaqədə olur?",
+            "a": [
+                "Meymun",
+                "Ayı",
+                "Delfin",
+                "Timsah",
+                "İt"
+            ],
+            "t": 2
+        },
+        {
+            "q": "4 ədəd dizi olan yeganə heyvan hansıdır?",
+            "a": [
+                "Zürafə",
+                "Ceyran",
+                "Dələ",
+                "Fil",
+                "Ayı"
+            ],
+            "t": 3
+        },
+        {
+            "q": "2010-cu ildə dünya kubokunu hansı ölkə qazanıb?",
+            "a": [
+                "Fransa",
+                "İspaniya",
+                "Uruquvay",
+                "Brazilya",
+                "Hollandiya"
+            ],
+            "t": 1
+        },
+        {
+            "q": "Bütün iqlimlərin yaşandığı yeganə ölkə?",
+            "a": [
+                "ABŞ",
+                "Yeni Zellandiya",
+                "Nigerya",
+                "Brazilya",
+                "Kanada"	
+            ],
+            "t": 0
+        },
+        {
+            "q": "Təyyarələrin qara qutusu hansı rəngdə olur?",
+            "a": [
+                "Narıncı",
+                "Qırmızı",
+                "Mavi",
+                "Ağ",
+                "Qara"
+            ],
+            "t": 0
+        },
+        {
+            "q": "Dünyanın ən uzun Çayı hansıdır?",
+            "a": [
+                "Kür",
+                "Amazon",
+                "Panama",
+                "Volqa",
+                "Nil"
+            ],
+            "t": 4
+        },
+        {
+            "q": "Dünyanın ən surətli böyüyən bitkisi? ",
+            "a": [
+                "Yonca",
+                "Qızıl gül",
+                "Palıd",
+                "Bambuk",
+                "Vələmir"
+            ],
+            "t": 3
+        },
+        {
+            "q": "Erkəkləri hamilə ola bilən yeganə canlı qrupu?",
+            "a": [
+                "Mavi balina",
+                "Dəniz atı",
+                "Qirxayaq",
+                "Hamam böcəyi",
+                "Delfin"
+            ],
+            "t": 1
+        }
+    ]
+}
